@@ -11,6 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.example.model.order.Order;
 import com.example.model.product.Product;
+import com.example.order.service.OrderFeignService;
 import com.example.order.service.OrderService;
 
 @Service
@@ -22,11 +23,14 @@ public class OrderServiceImpl implements OrderService {
     // private LoadBalancerClient loadBalancerClient;
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private OrderFeignService orderFeignService;
 
     @Override
     public Order createOrder(Long productId, Long userId) {
         Order order = new Order();
-        Product product = getProductFromRemoteWithBalance(productId);
+        // Product product = getProductFromRemoteWithBalance(productId);
+        Product product = orderFeignService.getProductById(productId);
         order.setId(1L);
         order.setId(userId);
         order.setTotalPrice(product.getPrice().multiply(new BigDecimal(product.getNum())));

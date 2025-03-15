@@ -3,6 +3,9 @@ spring:
         name: service-product
     cloud:
         nacos:
+            config:
+                import-check:
+                    enabled: false
             server-addr: 127.0.0.1:8848
 server:
     port: 9000
