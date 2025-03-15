@@ -4,7 +4,9 @@ spring:
     cloud:
         nacos:
             server-addr: 127.0.0.1:8848
+            # config:
+            #     namespace: dev # 读取什么命名空间
     config:
-        import: nacos:service-order.yml
+        import: nacos:service-order.yml #?group=groupName
 server:
     port: 8000
