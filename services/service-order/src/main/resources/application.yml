@@ -10,3 +10,8 @@ spring:
         import: nacos:service-order.yml #?group=groupName
 server:
     port: 8000
+
+# 设置loglevel
+logging:
+    level:
+        com.example.order.service: debug
