@@ -1,0 +1,63 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        // 集群启动
+        {
+            "type": "java",
+            "name": "OrderMainApplication-8000",
+            "request": "launch",
+            "mainClass": "com.example.order.OrderMainApplication",
+            "projectName": "service-order",
+            "args": "--server.port=8000"
+        },
+        {
+            "type": "java",
+            "name": "OrderMainApplication-8001",
+            "request": "launch",
+            "mainClass": "com.example.order.OrderMainApplication",
+            "projectName": "service-order",
+            "args": "--server.port=8001"
+        },
+        {
+            "type": "java",
+            "name": "OrderMainApplication-8002",
+            "request": "launch",
+            "mainClass": "com.example.order.OrderMainApplication",
+            "projectName": "service-order",
+            "args": "--server.port=8002"
+        },
+        {
+            "type": "java",
+            "name": "ProductMainApplication-9000",
+            "request": "launch",
+            "mainClass": "com.example.product.ProductMainApplication",
+            "projectName": "service-product",
+            "args": "--server.port=9000"
+        },
+        {
+            "type": "java",
+            "name": "ProductMainApplication-9001",
+            "request": "launch",
+            "mainClass": "com.example.product.ProductMainApplication",
+            "projectName": "service-product",
+            "args": "--server.port=9001"
+        },
+        {
+            "type": "java",
+            "name": "ProductMainApplication-9002",
+            "request": "launch",
+            "mainClass": "com.example.product.ProductMainApplication",
+            "projectName": "service-product",
+            "args": "--server.port=9002"
+        },
+    ]
+}
