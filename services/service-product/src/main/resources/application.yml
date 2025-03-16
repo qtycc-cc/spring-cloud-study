@@ -2,6 +2,10 @@ spring:
     application:
         name: service-product
     cloud:
+        sentinel:
+            transport:
+                dashboard: localhost:8080 # sentinel仪表盘
+            eager: true
         nacos:
             config:
                 import-check:

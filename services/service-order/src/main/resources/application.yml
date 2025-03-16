@@ -2,6 +2,10 @@ spring:
     application:
         name: service-order
     cloud:
+        sentinel:
+            transport:
+                dashboard: localhost:8080 # sentinel仪表盘
+            eager: true
         nacos:
             server-addr: 127.0.0.1:8848
             # config:
