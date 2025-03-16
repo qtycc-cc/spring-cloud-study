@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.alibaba.csp.sentinel.SphU;
 import com.example.model.order.Order;
 import com.example.model.product.Product;
 import com.example.order.service.OrderFeignService;
@@ -28,6 +29,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order createOrder(Long productId, Long userId) {
+        // try {
+        //     SphU.entry(""); // 编程式处理规则
+        // } catch (Exception e) {
+
+        // }
         Order order = new Order();
         // Product product = getProductFromRemoteWithBalance(productId);
         Product product = orderFeignService.getProductById(productId);
