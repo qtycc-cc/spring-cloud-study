@@ -35,7 +35,17 @@ public class OrderController {
     }
 
     @GetMapping("/config")
-    public String getConfi() {
+    public String getConfig() {
         return "orderTimeout: " + orderTimeout + ", " + "orderAutoConfirm: " + orderAutoConfirm;
+    }
+
+    @GetMapping("/read")
+    public String read() {
+        return "reading...";
+    }
+
+    @GetMapping("/write")
+    public String write() {
+        return "writing...";
     }
 }
