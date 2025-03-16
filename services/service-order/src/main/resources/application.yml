@@ -6,6 +6,13 @@ spring:
             server-addr: 127.0.0.1:8848
             # config:
             #     namespace: dev # 读取什么命名空间
+        openfeign: # 超时配置
+            client: #客户端配置
+                config:
+                    server-product: #服务名字
+                        logger-level: full
+                        connect-timeout: 5000 #请求超时时间
+                        read-timeout: 6000 #业务超时时间
     config:
         import: nacos:service-order.yml #?group=groupName
 server:
