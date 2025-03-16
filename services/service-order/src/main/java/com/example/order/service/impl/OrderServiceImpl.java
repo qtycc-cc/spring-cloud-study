@@ -31,7 +31,7 @@ public class OrderServiceImpl implements OrderService {
     public Order createOrder(Long productId, Long userId) {
         // try {
         //     SphU.entry(""); // 编程式处理规则
-        // } catch (Exception e) {
+        // } catch (BlockException e) {
 
         // }
         Order order = new Order();
