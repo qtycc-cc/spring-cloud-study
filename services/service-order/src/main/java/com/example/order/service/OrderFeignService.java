@@ -14,6 +14,6 @@ import com.example.order.service.impl.OrderFeignServiceFallback;
 @FeignClient(value = "service-product", fallback = OrderFeignServiceFallback.class)
 public interface OrderFeignService {
     // 发起 GET http://service-product/product/1
-    @GetMapping("/product/{productId}")
+    @GetMapping("api/product/product/{productId}") // 不能在@FeignClient Interface上面写RequestMapping!
     Product getProductById(@PathVariable Long productId);
 }

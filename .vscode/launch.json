@@ -6,11 +6,17 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GatewayMainAApplication",
+            "request": "launch",
+            "mainClass": "com.example.gateway.GatewayMainAApplication",
+            "projectName": "gateway"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
         },
-        // 集群启动
         {
             "type": "java",
             "name": "OrderMainApplication-8000",
@@ -58,6 +64,6 @@
             "mainClass": "com.example.product.ProductMainApplication",
             "projectName": "service-product",
             "args": "--server.port=9002"
-        },
+        }
     ]
 }
