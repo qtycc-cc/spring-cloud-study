@@ -10,10 +10,14 @@ spring:
               uri: lb://service-order
               predicates:
                     - Path=/api/order/**
+              filters:
+              - RewritePath=/api/order/?(?<segment>.*), /$\{segment} #重写路径
             - id: product
               uri: lb://service-product
               predicates:
                 - Path=/api/product/**
+              filters:
+              - RewritePath=/api/product/?(?<segment>.*), /$\{segment}
             # 自定义predicate
             - id: bing
               uri: https://cn.bing.com
