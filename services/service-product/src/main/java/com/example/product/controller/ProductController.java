@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.product.Product;
 import com.example.product.service.ProductService;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +20,8 @@ public class ProductController {
     @Autowired
     private ProductService productService;
     @GetMapping("/product/{productId}")
-    public Product getProduct(@PathVariable Long productId) {
-        logger.info("I have been requested!");
+    public Product getProduct(@PathVariable Long productId, HttpServletRequest request) {
+        logger.info("Request headers is {}", request.getHeader("X-Token"));
         return productService.getProductById(productId);
     }
 }
