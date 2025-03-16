@@ -5,7 +5,7 @@ spring:
         nacos:
             config:
                 import-check:
-                    enabled: false
+                    enabled: false #允许不写spring.config.import
             server-addr: 127.0.0.1:8848
 server:
     port: 9000
