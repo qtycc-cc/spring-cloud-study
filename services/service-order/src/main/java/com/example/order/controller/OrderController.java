@@ -28,6 +28,12 @@ public class OrderController {
         return orderService.createOrder(productId, userId);
     }
 
+    @GetMapping("/seckill")
+    public Order seckill(@RequestParam("productId") Long productId,
+                        @RequestParam("userId") Long userId) {
+        return orderService.createOrder(productId, userId);
+    }
+
     @GetMapping("/config")
     public String getConfi() {
         return "orderTimeout: " + orderTimeout + ", " + "orderAutoConfirm: " + orderAutoConfirm;

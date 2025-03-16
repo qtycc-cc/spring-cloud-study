@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.alibaba.csp.sentinel.SphU;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.example.model.order.Order;
 import com.example.model.product.Product;
 import com.example.order.service.OrderFeignService;
@@ -27,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderFeignService orderFeignService;
 
+    @SentinelResource(value = "createOrder", blockHandler = "createOrderFallback")
     @Override
     public Order createOrder(Long productId, Long userId) {
         // try {
@@ -38,9 +40,26 @@ public class OrderServiceImpl implements OrderService {
         // Product product = getProductFromRemoteWithBalance(productId);
         Product product = orderFeignService.getProductById(productId);
         order.setId(1L);
-        order.setId(userId);
+        order.setUserId(userId);
         order.setTotalPrice(product.getPrice().multiply(new BigDecimal(product.getNum())));
         order.setProducts(new ArrayList<>() {{ add(product); }});
+        return order;
+    }
+
+    /**
+     * 专用于@SentinelResource类型资源的fallback
+     * @param productId
+     * @param userId
+     * @param e
+     * @return
+     */
+    public Order createOrderFallback(Long productId, Long userId, BlockException e) {
+        logger.info("Fall back!");
+        Order order = new Order();
+        order.setId(0L);
+        order.setTotalPrice(new BigDecimal("0"));
+        order.setUserId(userId);
+
         return order;
     }
 

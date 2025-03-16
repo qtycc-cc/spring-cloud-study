@@ -6,6 +6,7 @@ spring:
             transport:
                 dashboard: localhost:8080 # sentinel仪表盘
             eager: true
+            web-context-unify: false # 用于流控策略的链路模式
         nacos:
             server-addr: 127.0.0.1:8848
             # config:
