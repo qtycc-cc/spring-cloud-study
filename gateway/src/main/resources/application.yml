@@ -12,6 +12,7 @@ spring:
                     - Path=/api/order/**
               filters:
               - RewritePath=/api/order/?(?<segment>.*), /$\{segment} #重写路径
+              - OnceToken=X-Response-Token, uuid
             - id: product
               uri: lb://service-product
               predicates:
