@@ -14,5 +14,10 @@ spring:
               uri: lb://service-product
               predicates:
                 - Path=/api/product/**
+            # 自定义predicate
+            - id: bing
+              uri: https://cn.bing.com
+              predicates:
+                - Vip=user, carmen
 server:
     port: 80
