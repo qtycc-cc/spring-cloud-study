@@ -13,6 +13,7 @@ spring:
                         logger-level: full
                         connect-timeout: 5000 #请求超时时间
                         read-timeout: 6000 #业务超时时间
+                        # retryer: feign.retryer.Default # 重试机制
     config:
         import: nacos:service-order.yml #?group=groupName
 server:
