@@ -5,6 +5,15 @@ spring:
         nacos:
             server-addr: 127.0.0.1:8848
         gateway:
+            globalcors: #全局跨域
+              cors-configurations:
+                '[/**]':
+                  allowedOrigins: "https://docs.spring.io"
+                  allowedMethods:
+                    - GET
+                    - POST
+                    - DELETE
+                    - PUT
             routes:
             - id: order
               uri: lb://service-order
