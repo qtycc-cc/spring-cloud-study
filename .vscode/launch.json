@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SeataStorageMainApplication",
+            "request": "launch",
+            "mainClass": "com.atguigu.storage.SeataStorageMainApplication",
+            "projectName": "seata-storage"
+        },
+        {
+            "type": "java",
+            "name": "SeataOrderMainApplication",
+            "request": "launch",
+            "mainClass": "com.atguigu.order.SeataOrderMainApplication",
+            "projectName": "seata-order"
+        },
+        {
+            "type": "java",
+            "name": "SeataBusinessMainApplication",
+            "request": "launch",
+            "mainClass": "com.atguigu.business.SeataBusinessMainApplication",
+            "projectName": "seata-business"
+        },
+        {
+            "type": "java",
+            "name": "SeataAccountMainApplication",
+            "request": "launch",
+            "mainClass": "com.atguigu.account.SeataAccountMainApplication",
+            "projectName": "seata-account"
+        },
+        {
+            "type": "java",
             "name": "GatewayMainAApplication",
             "request": "launch",
             "mainClass": "com.example.gateway.GatewayMainAApplication",

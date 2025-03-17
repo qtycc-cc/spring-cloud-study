@@ -8,5 +8,5 @@ spring:
         import-check:
           enabled: false
 server:
-  port: 11000
+  port: 12000
 

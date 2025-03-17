@@ -2,7 +2,7 @@ spring:
   application:
     name: seata-account
   datasource:
-    url: jdbc:mysql://localhost:3306/account_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://localhost:3307/account_db?useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -13,7 +13,7 @@ spring:
         import-check:
           enabled: false
 server:
-  port: 10000
+  port: 11000
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
