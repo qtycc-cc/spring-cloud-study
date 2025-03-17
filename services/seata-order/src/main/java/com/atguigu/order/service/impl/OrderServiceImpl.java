@@ -6,6 +6,7 @@ import com.atguigu.order.mapper.OrderTblMapper;
 import com.atguigu.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -15,6 +16,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private AccountFeignClient accountFeignClient;
 
+    @Transactional
     @Override
     public OrderTbl create(String userId, String commodityCode, int orderCount) {
         //1、计算订单价格
